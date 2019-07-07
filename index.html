@@ -1,0 +1,207 @@
+﻿<!DOCTYPE html>
+<html lang="hu">
+	<head>
+		<title>Weblap címe</title>
+		<meta charset="UTF-8">
+		<!-- Responsive elem Mobil nézet eleje -->
+		<meta name="viewport" content="width=device-width,initial-scale=1.0">
+		<!-- Responsive elem Mobil nézet vege -->
+		<meta http-equiv="X-UA-Compatible" content="IE=EmulateIE8" />
+		<!-- Cookie script eleje -->
+		<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/cookie-bar/cookiebar-latest.min.js?theme=grey&tracking=1&showNoConsent=1"></script>
+		<!-- Cookie script vege -->
+		<style>
+			/* Talpatlan, vékony betűtipus */
+			@import url('https://fonts.googleapis.com/css?family=Work+Sans:300&subset=latin-ext');
+			/* Talpatlan, vékony betűtipus */
+			html, body {
+				height:100%;
+				margin: 0;
+				overflow: hidden;
+				font-family: 'Work Sans', Arial, Helvetica, sans-serif;
+				color: white;
+				display: flex;
+				flex-direction: column;
+			}
+			.pirosvonal {
+				border: 1px solid red;
+			}
+			a {
+				color: white;
+				text-decoration: none;
+			}
+			
+			.background {
+				background-image: url("img/hatter.png");
+				background-repeat: no-repeat;
+				background-position: center;
+				background-size: cover; 
+            }
+			.backgroundvideo {
+				position: absolute;
+				z-index: -100;
+				top: 50%;
+				left: 50%;
+				min-width: 100%;
+				min-height: 100%;
+				width: auto;
+				height: auto;
+				transform: translate(-50%, -50%);	
+			}
+			nav {
+				font-size: 16px;
+				list-style: none;
+				display: flex;
+				justify-content: center;
+			}
+			nav a {
+				display: block;
+			}
+			nav li {
+				list-style: none;
+				float: left;
+                position: relative;
+			}
+			
+			nav li ul {
+				float: left;
+				right: 0;
+				position: absolute;
+				top: 16px;
+				visibility: hidden;
+				transition: all .25s;
+			}
+			nav li:hover ul {
+				visibility: visible;
+				opacity: 1;
+			}
+				
+			nav li ul li {
+				float: none;
+			}
+			.headerlink {
+				background-color: rgba(11, 59, 4, 0.5);
+				margin: 0 10px;
+				padding: 5px;
+				width: 100px;
+				border: 1px solid black;
+				border-radius: 0 0 0 10px;
+				display: inline-block;
+				text-align: center;
+			}
+			.headerlink:hover {
+				transition-duration: 0.5s;
+				padding: 5px;
+				border: 1px solid white;
+			}
+			.bigfont {
+				font-size: 50px;
+				font-family: 'Work Sans', Arial, Helvetica, sans-serif;
+			}
+			.buttonbox {
+				text-align: center;
+				margin: 20px 0;
+			}
+			.menulink {
+				background-color: rgba(11, 59, 4, 0.5);
+				padding: 10px;
+				margin: 10px;
+				width: 180px;
+				border: 1px solid black;
+				border-radius: 0 0 0 20px;
+				display: inline-block;
+				text-align: center;
+				font-size: 22px;
+			}
+			.menulink:hover {
+				border: 1px solid white;
+				transition-duration: 0.5s;
+			}
+			
+			.container {
+				flex-grow: 1;
+				display: flex;
+				justify-content: center;
+				align-items: center;
+				flex-direction: column;
+			}
+			.footer {
+				font-size: 20px;
+				display: flex;
+				justify-content: center;
+			}
+			#year {
+				font-family:cursive;
+			}
+			
+			
+			/* Media Query stíluslap (mobilnézet) */
+			@media (max-width: 767px) {
+				.backgroundvideo {
+					display: none;
+				}
+				.bigfont {
+					font-size: 28px;
+				}
+				.menulink {
+					font-size: 14px;
+				}
+				.headerlink {
+					font-size: 10px;
+				}
+				.headerlinkno {
+					display: none;
+				}
+				.footer {
+					font-size: 10px;
+				}
+				.hideonmobile {
+                    display: none;
+             	}
+
+			}
+
+			@media only screen and (max-width: 768px) {
+			  /* For mobile phones: */
+			  [class*="col-"] {
+				width: 100%;
+			  }
+			}
+			
+		</style>
+	</head>
+	<body class="background">
+		<!-- <video class="backgroundvideo" loop muted autoplay poster="hatter.jpg" src="video/hatter.mp4"></video> -->
+		<nav class="header">
+			<li><a class="headerlink headerlinkno" href="" target="blank">Első menü</a></li>
+			<li><a class="headerlink" href="" target="blank">Második link</a></li>
+			<li><a class="headerlink" href="" target="blank">3. menü</a>
+				<ul>
+					<li><a class="headerlink" href="" target="blank">almenü1</a></li>
+					<li><a class="headerlink" href="" target="blank">almenü2</a></li>
+					<li><a class="headerlink" href="" target="blank">almenü3</a></li>
+				</ul>
+			</li>
+			<li><a class="headerlink headerlinkno" href="" target="blank">Utolsó pont</a></li>			
+		</nav>
+		<div class="container">
+			<div class="bigfont">Árvíztűtő tükörfúrógép.</div>
+			<div class="buttonbox">
+				<a class="menulink" href="" target="blank">Menü gomb</a>
+				<a class="menulink" href="" target="blank">Második gomb</a>
+				<a class="menulink" href="" target="blank">Harmadik gomb</a>
+			</div>
+		</div>
+		<footer class="footer">
+				&copy;fbandy-<span id="year"></span>
+				<script>
+					var d = new Date();
+					var n = d.getFullYear();
+					document.getElementById("year").innerHTML = n;
+				</script>
+		</footer>
+		<!-- Cookie tag eleje -->
+		<a href="#" onclick="document.cookie='cookiebar=;expires=Thu, 01 Jan 1970 00:00:01 GMT;path=/'; setupCookieBar(); return false;"></a>
+		<!-- Cookie tag vege -->
+	</body>
+</html>
